@@ -1,0 +1,144 @@
+:root {
+  --bg-top: #f6d9b8;
+  --bg-bottom: #e6b784;
+  --panel: rgba(93, 57, 34, 0.9);
+  --panel-soft: rgba(255, 244, 224, 0.9);
+  --ink: #2b1d14;
+  --accent: #b65234;
+  --accent-soft: #ffd5a9;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Trebuchet MS", "Verdana", sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top, rgba(255, 245, 222, 0.8), transparent 35%),
+    linear-gradient(180deg, var(--bg-top), var(--bg-bottom));
+}
+
+.page-shell {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: clamp(12px, 3vw, 24px);
+}
+
+.game-panel {
+  width: min(1100px, 100%);
+  display: grid;
+  gap: clamp(14px, 2vw, 18px);
+  grid-template-columns: minmax(260px, 320px) minmax(0, 1fr);
+  align-items: start;
+}
+
+.game-copy {
+  padding: clamp(16px, 3vw, 22px);
+  border-radius: 24px;
+  background: var(--panel-soft);
+  box-shadow: 0 16px 40px rgba(76, 43, 18, 0.18);
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.74rem;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 0.95;
+}
+
+.description,
+.controls {
+  margin: 14px 0 0;
+  line-height: 1.5;
+  font-size: clamp(0.96rem, 1.7vw, 1rem);
+}
+
+.controls span {
+  display: inline-block;
+  margin: 2px 2px 0 0;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: rgba(182, 82, 52, 0.12);
+  color: var(--accent);
+  font-weight: 700;
+}
+
+#game-container {
+  width: 100%;
+  max-width: 800px;
+  aspect-ratio: 4 / 3;
+  min-height: 320px;
+  border-radius: 28px;
+  overflow: hidden;
+  border: 6px solid rgba(85, 45, 24, 0.26);
+  box-shadow: 0 22px 45px rgba(82, 47, 24, 0.22);
+  background: #8c5b3e;
+}
+
+#game-container canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 900px) {
+  .game-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .game-copy {
+    order: 2;
+  }
+
+  #game-container {
+    order: 1;
+  }
+}
+
+@media (max-width: 640px) {
+  body {
+    min-height: 100dvh;
+  }
+
+  .page-shell {
+    place-items: start center;
+  }
+
+  .game-copy {
+    border-radius: 18px;
+  }
+
+  #game-container {
+    border-width: 4px;
+    border-radius: 18px;
+    min-height: 280px;
+    box-shadow: 0 14px 28px rgba(82, 47, 24, 0.18);
+  }
+}
+
+@media (max-width: 480px) {
+  .eyebrow {
+    font-size: 0.68rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .controls span {
+    padding: 2px 6px;
+  }
+}

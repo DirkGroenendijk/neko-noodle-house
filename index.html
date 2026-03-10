@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Neko Noodle House</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="game-panel">
+        <div class="game-copy">
+          <p class="eyebrow">Cozy ramen prototype</p>
+          <h1>Neko Noodle House</h1>
+          <p class="description">
+            Serve one customer at a time before the day ends. Carry ingredients
+            one by one, build ramen at the assembly station, and deliver the
+            correct bowl for a tip.
+          </p>
+          <p class="controls">
+            Move with <span>WASD</span> or <span>Arrow Keys</span>. Interact
+            with <span>E</span> or <span>Space</span>.
+          </p>
+        </div>
+        <div id="game-container" aria-label="Neko Noodle House game"></div>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.90.0/dist/phaser.js"></script>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
