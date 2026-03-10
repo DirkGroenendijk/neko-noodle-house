@@ -5,6 +5,61 @@ export const MAX_PATIENCE = 100;
 export const BASE_BOWL_REWARD = 12;
 export const MAX_TIP = 6;
 export const DAY_TIME_INCREMENT = 5;
+export const DINING_DURATION_SECONDS = 6;
+
+export const PIXEL_PALETTE = {
+  outline: "#3c2a1f",
+  shadow: "#5a4030",
+  woodDark: "#6f4a32",
+  woodMid: "#8f6140",
+  woodLight: "#b07d55",
+  floorA: "#cda47a",
+  floorB: "#d4ad86",
+  wall: "#e7d3af",
+  wallShade: "#d2ba90",
+  paper: "#f4e7c8",
+  plant: "#6f8f4f",
+  plantDark: "#4d6a37",
+  brass: "#d0a24d",
+  lantern: "#f7d88a",
+  clothBlue: "#6c8aa6",
+  clothRed: "#b45e4c",
+  clothGreen: "#7d9a62",
+  bowl: "#efe2cb",
+  broth: "#c97b45",
+  noodles: "#efd27b",
+  egg: "#f5efcf",
+  yolk: "#dfaf45",
+  fishcake: "#e6b2c8",
+  fishcakeDark: "#c97a9a",
+  steel: "#9ea4a3",
+  counterTop: "#d3b289"
+};
+
+export const GRID_CONFIG = {
+  originX: 112,
+  originY: 128,
+  tileSize: 64,
+  cols: 9,
+  rows: 6
+};
+
+// Blocked cells preserve walls, the front door lane, and a simple walkway through the room.
+export const BLOCKED_LAYOUT_TILES = [
+  "0,0",
+  "1,0",
+  "2,0",
+  "3,0",
+  "4,0",
+  "5,0",
+  "6,0",
+  "7,0",
+  "8,0",
+  "3,4",
+  "4,4",
+  "5,4",
+  "4,5"
+];
 
 export const INGREDIENTS = {
   noodles: {
@@ -50,6 +105,18 @@ export const STATIONS = {
   counter: { key: "counter", type: "counter", label: "Counter", x: 610, y: 258, color: 0xc56a45 },
   trash: { key: "trash", type: "trash", label: "Trash", x: 130, y: 258, color: 0x8f8b86 }
 };
+
+export const PLACEABLE_ITEMS = [
+  { key: "noodles", type: "station", stationKey: "noodles", label: "Noodles", textureKey: "station-noodles", tile: { col: 0, row: 1 } },
+  { key: "broth", type: "station", stationKey: "broth", label: "Broth", textureKey: "station-broth", tile: { col: 1, row: 1 } },
+  { key: "egg", type: "station", stationKey: "egg", label: "Egg", textureKey: "station-egg", tile: { col: 2, row: 1 } },
+  { key: "fishcake", type: "station", stationKey: "fishcake", label: "Fishcake", textureKey: "station-fishcake", tile: { col: 3, row: 1 } },
+  { key: "assembly", type: "station", stationKey: "assembly", label: "Assembly", textureKey: "station-assembly", tile: { col: 7, row: 1 } },
+  { key: "counter", type: "station", stationKey: "counter", label: "Counter", textureKey: "station-counter", tile: { col: 7, row: 3 } },
+  { key: "trash", type: "station", stationKey: "trash", label: "Trash", textureKey: "station-trash", tile: { col: 0, row: 3 } },
+  { key: "tableA", type: "table", label: "Table A", textureKey: "table", tile: { col: 2, row: 3 } },
+  { key: "tableB", type: "table", label: "Table B", textureKey: "table", tile: { col: 6, row: 3 } }
+];
 
 // Recipes are data-driven so new bowls can be added without changing the loop.
 export const RECIPES = {
